@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   recipe: {
-    marginTop:20
+    marginTop: 20
   },
   container: {
     backgroundColor: '#F1F7FF',
@@ -10,13 +10,13 @@ export default StyleSheet.create({
     height: '100%'
   },
   productImage: {
-    width:'100%',
+    width: '100%',
     height: 200,
     position: 'absolute',
     zIndex: -1
   },
   productDescription: {
-    paddingTop: 80,
+    paddingTop: 30,
     paddingBottom: 50,
     backgroundColor: '#fff',
     marginTop: '33%',
@@ -50,7 +50,6 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 100,
     width: 50
-
   },
   iconAndText: {
     flexDirection: 'row',

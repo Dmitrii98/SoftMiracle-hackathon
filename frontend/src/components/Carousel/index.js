@@ -45,12 +45,16 @@ const data = [
 ];
 
 export default function ShopCarousel(props) {
-  const {style, categories} = props;
+  const {style, categories, navigation} = props;
   const carouselRef = useRef(null);
   const ITEM_WIDTH = 0.4 * windowWidth;
   const SEPARATOR_WIDTH = 5;
 
-  function renderHeader() {
+  const openCategory = (id, title) => {
+    navigation.navigate('Category', {id, title});
+  };
+
+  const renderHeader = () => {
     return (
       <View style={styles.header}>
         <View>
@@ -58,17 +62,16 @@ export default function ShopCarousel(props) {
         </View>
       </View>
     );
-  }
+  };
 
-  function renderItem({item, index}) {
+  const renderItem = ({item, index}) => {
     const {category_id, title, picture} = item;
     return (
       <Pressable
         activeOpacity={1}
         style={styles.item}
-        onPress={() => {
-          carouselRef.current.scrollToIndex(index);
-        }}>
+        onPress={() => openCategory(category_id, title)}
+      >
         <View style={styles.imageContainer}>
           <Image
             source={{uri: picture}}
@@ -80,7 +83,7 @@ export default function ShopCarousel(props) {
         </View>
       </Pressable>
     );
-  }
+  };
 
   return (
     <View style={styles.container}>
