@@ -23,32 +23,33 @@ async function bootstrap(){
     Recipe.belongsToMany(Products, {through: RecipesProducts});
     Products.belongsToMany(Recipe, {through: RecipesProducts});
     await sequelize.authenticate();
-    await sequelize.sync();
+    //await sequelize.sync();
+    
     // const pomidor = await Products.create({
-    //     title: "Помидоры"
-    // });
-    // const onion = await Products.create({
-    //     title: "Лук"
-    // });
+    //      title: "Слоёное тесто"
+    //  });
+    //  const onion = await Products.create({
+    //      title: "Яйца"
+    //  });
 
-    // const curica = await Products.create({
-    //     title: "Курица"
-    // });
+    //  const curica = await Products.create({
+    //      title: "Молоко"
+    //  });
 
-    // const morkovka = await Products.create({
-    //     title: "Морковка"
-    // });
+    //  const morkovka = await Products.create({
+    //      title: "Мука"
+    //  });
 
-    // const cup:any = await Recipe.create({
-    //     title: "Суп",
-    //     picture: "",
-    //     text: "Сначала необходимо сварить курицу. Через 20 минут добавить нарезанную картошку. Варить в течение ещё 20 минут, после чего добавить укроп, лаврушку и лапшу."
-    // });
+    //  const cup:any = await Recipe.create({
+    //      title: "Торт Наполеон",
+    //      picture: "",
+    //      text: "Сначала необходимо приготовить заварной крем. Для этого вам необходимо смешать муку с яйцами. Следующим шагом нужно добавить полученную смесь в молоко и заварить крем. После приготовления кремя необходимо осуществить сборку торта"
+    //  });
 
-    // cup.addProducts(morkovka);
-    // cup.addProducts(curica);
-    // cup.addProducts(onion);
-    // cup.addProducts(pomidor);
+    //  cup.addProducts(morkovka);
+    //  cup.addProducts(curica);
+    //  cup.addProducts(onion);
+    //  cup.addProducts(pomidor);
 
     console.log("server was started on " + process.env.BACKEND_PORT);
 }
