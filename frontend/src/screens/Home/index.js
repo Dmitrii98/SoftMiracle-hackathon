@@ -3,6 +3,7 @@ import { ScrollView, Text } from 'react-native';
 import RecipeCard from '../../components/RecipeCard';
 import Layout from '../../components/Layout';
 import styles from './styles';
+import ShopCarousel from '../../components/Carousel';
 
 const Home = ({navigation}) => {
   const data = [
@@ -30,6 +31,7 @@ const Home = ({navigation}) => {
 
   return (
     <Layout>
+      <ShopCarousel />
       <ScrollView style={styles.scrollBox}>
         <Text style={styles.title}>Популярные рецепты</Text>
         {
