@@ -7,5 +7,8 @@ export const goodsAPI = {
   async getRecipes() {
     return await instance.get('getRecepts').then(response => response.data);
   },
+  async getCategory(id) {
+    return await instance.get(`getReceptsByCategory?id=${id}`).then(response => response.data);
+  },
 };
 

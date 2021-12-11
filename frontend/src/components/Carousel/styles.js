@@ -88,6 +88,7 @@ export default StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#1C2127',
+    marginLeft: 5
 
   },
   imageContainer: {
