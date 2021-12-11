@@ -8,7 +8,7 @@ export const Recipe = sequelize.define('recipes',
         allowNull:false
     },
     text:{
-        type: DataTypes.STRING,
+        type: DataTypes.JSON,
         allowNull:false
     },
     picture: {
