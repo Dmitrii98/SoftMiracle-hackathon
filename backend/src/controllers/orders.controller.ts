@@ -13,9 +13,9 @@ export default new class OrderController {
     }
 
     async getReceptsByCategory(req: any, res: Response) {
-        try{
+        try {
             return res.status(httpStatus.OK).json(await orderService.getReceptsByCategoryes(req.query.id));
-        }catch(e) {
+        } catch(e) {
             return res.status(httpStatus.NOT_FOUND).json({message: "Recept was not found"});
         }
     }
