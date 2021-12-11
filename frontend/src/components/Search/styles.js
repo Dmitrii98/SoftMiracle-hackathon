@@ -1,7 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  search:{
-    borderRadius: 30
+  inputContainerStyle:{
+    backgroundColor: '#fff',
+  },
+  containerStyle:{
+
+  },
+  inputStyle:{
+    backgroundColor: '#fff',
   }
 });

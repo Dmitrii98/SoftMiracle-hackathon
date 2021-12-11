@@ -2,8 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   recipe: {
-    marginTop: 30
-
+    marginTop:20
   },
   container: {
     backgroundColor: '#F1F7FF',
@@ -11,17 +10,16 @@ export default StyleSheet.create({
     height: '100%'
   },
   productImage: {
-    justifyContent: 'center',
-    marginLeft: '12%',
-    marginBottom: 20,
+    width:'100%',
+    height: 200,
     position: 'absolute',
-    zIndex: 100
+    zIndex: -1
   },
   productDescription: {
     paddingTop: 80,
     paddingBottom: 50,
     backgroundColor: '#fff',
-    marginTop: '40%',
+    marginTop: '33%',
     marginBottom: 30
   },
   title: {
@@ -46,7 +44,13 @@ export default StyleSheet.create({
     marginTop: 1
   },
   backButton: {
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    marginTop: 10,
+    padding: 10,
+    backgroundColor: '#fff',
+    borderRadius: 100,
+    width: 50
+
   },
   iconAndText: {
     flexDirection: 'row',
@@ -61,5 +65,5 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20
-  }
+  },
 });

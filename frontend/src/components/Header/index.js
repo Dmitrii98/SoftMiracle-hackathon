@@ -5,8 +5,11 @@ import styles from './styles';
 const HeaderMenu = () => {
   return (
     <Header
-      leftComponent={{icon: 'menu', color: '#fff', iconStyle: {color: '#fff'}}}
-      rightComponent={{icon: 'person', color: '#fff', iconStyle: {color: '#fff'}}}
+      containerStyle={{
+        backgroundColor: '#fff',
+      }}
+      leftComponent={{icon: 'menu', color: '#000', iconStyle: {color: '#000'}}}
+      rightComponent={{icon: 'person', color: '#000', iconStyle: {color: '#000'}}}
     />
   );
 };
