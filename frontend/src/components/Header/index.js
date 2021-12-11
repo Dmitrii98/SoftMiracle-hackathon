@@ -6,10 +6,9 @@ const HeaderMenu = () => {
   return (
     <Header
       leftComponent={{icon: 'menu', color: '#fff', iconStyle: {color: '#fff'}}}
-      rightComponent={{icon: 'home', color: '#fff'}}
+      rightComponent={{icon: 'person', color: '#fff', iconStyle: {color: '#fff'}}}
     />
   );
 };
 
 export default HeaderMenu;
-

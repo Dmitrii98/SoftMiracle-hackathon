@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import MyStack from './src/navigation/navigate';
+import { SafeAreaProvider } from 'react-native-safe-area-context/src/SafeAreaContext';
+import MyTabs from './src/navigation/tabs';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
   );
 }

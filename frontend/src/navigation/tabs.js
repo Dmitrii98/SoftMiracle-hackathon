@@ -1,14 +1,12 @@
 import * as React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Preloader from '../components/Preloader';
+import { HomeStack } from './stack';
 
-const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const MyStack = () => {
+const MyTabs = () => {
   return (
     <>
       <Tab.Navigator
@@ -16,7 +14,7 @@ const MyStack = () => {
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
-            if (route.name === 'Home') {
+            if (route.name === 'HomeStack') {
               iconName = focused
                 ? 'home'
                 : 'home';
@@ -36,19 +34,12 @@ const MyStack = () => {
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen name='Home' component={Home} options={{headerShown: false}} />
+        <Tab.Screen name='HomeStack' component={HomeStack} options={{headerShown: false}} />
         <Tab.Screen name='Discount' component={Preloader} options={{headerShown: false}} />
         <Tab.Screen name='Basket' component={Preloader} options={{headerShown: false}} />
       </Tab.Navigator>
-      {/*<Stack.Navigator>*/}
-      {/*  <Stack.Screen*/}
-      {/*    name='Welcome'*/}
-      {/*    component={Home}*/}
-      {/*    options={{headerShown: false}}*/}
-      {/*  />*/}
-      {/*</Stack.Navigator>*/}
     </>
   );
 };
 
-export default MyStack;
+export default MyTabs;
