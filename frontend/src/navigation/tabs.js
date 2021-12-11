@@ -14,15 +14,15 @@ const MyTabs = () => {
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
-            if (route.name === 'HomeStack') {
+            if (route.name === 'Главная') {
               iconName = focused
                 ? 'home'
                 : 'home';
-            } else if (route.name === 'Discount') {
+            } else if (route.name === 'Скидки на рецепты') {
               iconName = focused
                 ? 'pricetags'
                 : 'pricetags';
-            } else if (route.name === 'Basket') {
+            } else if (route.name === 'Корзина') {
               iconName = focused
                 ? 'basket'
                 : 'basket';
@@ -30,13 +30,17 @@ const MyTabs = () => {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'black',
+          tabBarActiveTintColor: '#F2994A',
           tabBarInactiveTintColor: 'gray',
+          tabBarStyle: {
+            paddingBottom: 5,
+            paddingTop: 5,
+          }
         })}
       >
-        <Tab.Screen name='HomeStack' component={HomeStack} options={{headerShown: false}} />
-        <Tab.Screen name='Discount' component={Preloader} options={{headerShown: false}} />
-        <Tab.Screen name='Basket' component={Preloader} options={{headerShown: false}} />
+        <Tab.Screen name='Главная' component={HomeStack} options={{headerShown: false}} />
+        <Tab.Screen name='Скидки на рецепты' component={Preloader} options={{headerShown: false}} />
+        <Tab.Screen name='Корзина' component={Preloader} options={{headerShown: false}} />
       </Tab.Navigator>
     </>
   );
