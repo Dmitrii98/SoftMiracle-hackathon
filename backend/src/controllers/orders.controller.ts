@@ -11,7 +11,11 @@ export default new class OrderController{
         return res.json(await orderService.getTopMarkets());
     }
 
-    async getRecepts(req: any, res: Response){
-        return res.json(await orderService.getRecepts());
+    async getReceptsByCategory(req: any, res: Response){
+        return res.json(await orderService.getReceptsByCategoryes(req.query.id));
+    }
+
+    async getCategoryes(req: any, res: Response){
+        return res.json(await orderService.getCategoryes());
     }
 }

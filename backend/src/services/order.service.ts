@@ -1,10 +1,9 @@
-import bcrypt from 'bcrypt';
-
 import { Orders } from '../models/orders.model';
 import sequelize from "../db";
 import { Recipe } from './../models/recipe.model';
 import { Products } from './../models/products.model';
 import IRecept from '../dtos/recept.interface';
+import { Category } from '../models/categories.model';
 
 export default new class OrderSevice {
     
@@ -40,8 +39,8 @@ export default new class OrderSevice {
        return filtered;
     }
 
-    async getRecepts() {
-        let recept:any = await Recipe.findAll({include: Products});
+    async getReceptsByCategoryes(category: number) {
+        let recept:any = await Recipe.findAll({include: Products, where: {category_id: category}});
 
         const responses = Promise.all(recept.map(async (element: any, i: number) => {
             const products = await recept[i].products;
@@ -49,7 +48,7 @@ export default new class OrderSevice {
             recept[i].products = await this.getProducts(products);
 
             const response: IRecept = {
-                title: recept[i].rirle,
+                title: recept[i].title,
                 text: recept[i].text,
                 products: recept[i].products
             }
@@ -58,5 +57,9 @@ export default new class OrderSevice {
         }));
 
         return responses;
+    }
+
+    async getCategoryes() {
+        return await Category.findAll();
     }
 }
