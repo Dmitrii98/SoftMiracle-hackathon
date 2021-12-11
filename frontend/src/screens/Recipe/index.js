@@ -12,9 +12,8 @@ import { Button } from 'react-native-elements';
 import styles from './styles';
 
 const RecipeScreen = ({route, navigation}) => {
-  const name = route.params.name;
-  const time = route.params.time;
-
+  const recipe = route.params.recipe;
+  console.log(recipe);
   const backHome = () => {
     navigation.navigate('Home');
   };
@@ -23,30 +22,29 @@ const RecipeScreen = ({route, navigation}) => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.recipe}>
         <TouchableOpacity>
-          <Ionicons
-            onPress={backHome}
-            name='arrow-back'
-            size={30}
-            color='#000'
-            style={styles.backButton}
-          />
+            <Ionicons
+              onPress={backHome}
+              name='arrow-back'
+              size={30}
+              color='#000'
+              style={styles.backButton}
+            />
         </TouchableOpacity>
         <Image
           style={styles.productImage}
-          source={require('../../assets/oatmeal.png')}
+          source={{uri: recipe.picture}}
         />
         <View style={styles.productDescription}>
           <View style={styles.titleAndTime}>
-            <Text style={styles.title}>{name}</Text>
+            <Text style={styles.title}>{recipe.title}</Text>
             <View style={styles.iconAndText}>
               <Ionicons
-                onPress={backHome}
                 name='time'
                 size={20}
                 color='#A7A7A7'
                 style={styles.timeIcon}
               />
-              <Text style={styles.timeText}>{time}</Text>
+              <Text style={styles.timeText}>{recipe.time}</Text>
             </View>
           </View>
           <Text style={styles.text}>

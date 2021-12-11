@@ -14,7 +14,10 @@ const Search = () => {
       placeholder='Type Here...'
       onChangeText={updateSearch}
       value={search}
-      inputContainerStyle={styles.search}
+      inputContainerStyle={styles.inputContainerStyle}
+      containerStyle={styles.containerStyle}
+      inputStyle={styles.inputStyle}
+      lightTheme
     />
   );
 };
