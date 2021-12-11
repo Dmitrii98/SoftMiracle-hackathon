@@ -2,6 +2,8 @@ import bcrypt from 'bcrypt';
 
 import { Orders } from '../models/orders.model';
 import sequelize from "../db";
+import { Recipe } from './../models/recipe.model';
+import { Products } from './../models/products.model';
 
 export default new class OrderSevice{
     
@@ -19,5 +21,9 @@ export default new class OrderSevice{
             group: ["merchant_name"],
             order: [["count", "DESC"]]
         })
+    }
+
+    async getRecepts(){
+        return await Recipe.findAll({include: Products});
     }
 }

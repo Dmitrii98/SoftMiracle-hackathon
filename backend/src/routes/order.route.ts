@@ -1,8 +1,9 @@
 import {Router} from 'express'
 
-import orderService from '../services/order.service';
+import orderController from '../controllers/orders.controller';
 
 export const orderRoutes = Router();
 
-orderRoutes.get('/getTopProducts', orderService.getTopProducts);
-orderRoutes.get('/getTopMarkets', orderService.getTopProducts);
+orderRoutes.get('/getTopProducts', orderController.getTopProducts);
+orderRoutes.get('/getTopMarkets', orderController.getTopProducts);
+orderRoutes.get('/getRecepts', orderController.getRecepts);
