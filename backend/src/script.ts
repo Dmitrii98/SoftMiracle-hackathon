@@ -34,4 +34,4 @@ async function bootstrap(){
     console.log("server was started on " + process.env.BACKEND_PORT);
 }
 
-app.listen(process.env.BACKEND_PORT, bootstrap);
+app.listen(process.env.BACKEND_PORT || 5000, bootstrap);

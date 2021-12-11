@@ -40,7 +40,7 @@ export default new class OrderSevice {
     }
 
     async getReceptsByCategoryes(category: number) {
-        let recept:any = await Recipe.findAll({include: Products, where: {category_id: category}});
+        let recept: any = await Recipe.findAll({include: Products, where: {category_id: category}});
 
         const responses = Promise.all(recept.map(async (element: any, i: number) => {
             const products = await recept[i].products;

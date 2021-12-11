@@ -10,6 +10,6 @@ export default new Sequelize(
     {
         dialect: 'postgres',
         host: 'localhost',
-        port: 5432
+        port: Number(process.env.BASE_PORT) || 5432
     }
 )
