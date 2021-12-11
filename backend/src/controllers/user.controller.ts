@@ -6,7 +6,7 @@ import userDto from '../dtos/user.dto';
 import userService from '../services/user.service';
 
 export default new class UserController{
-    async registration(req: any, res: Response){
+    async registration(req: any, res: Response) {
         try{
             const user: userDto = req.body;
             return res.status(httpStatus.OK).json(await userService.registration(user));
@@ -15,7 +15,7 @@ export default new class UserController{
         }
     }
 
-    async login(req: any, res: Response){
+    async login(req: any, res: Response) {
         try{
             const user: loginDto = req.body;
             return res.status(httpStatus.OK).json(await userService.login(user));
