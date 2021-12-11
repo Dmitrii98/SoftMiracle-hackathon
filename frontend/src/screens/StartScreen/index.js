@@ -1,21 +1,21 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import { StatusBar } from 'expo-status-bar';
-import globalStyles from '../../styles/globalStyles'
+import React, { useState } from 'react';
+import { SafeAreaView, View } from 'react-native';
+import globalStyles from '../../styles/globalStyles';
+import WelcomeModal from '../../components/WelcomeModal';
+import HeaderMenu from '../../components/Header';
+import Search from '../../components/Search';
+import TabMenu from '../../components/TabMenu';
 import styles from './styles';
 
-const StartScreen = ( ) => {
-
-    return (
-      <View style={globalStyles.container}>
-          <Text>Hello Hackathon!</Text>
-          <StatusBar style="auto" />
-        <Button
-          title="Solid Button"
-        />
-      </View>
-    )
+const StartScreen = () => {
+  return (
+    <SafeAreaView style={globalStyles.container}>
+      <WelcomeModal />
+      <HeaderMenu />
+      <Search />
+      <TabMenu />
+    </SafeAreaView>
+  );
 };
 
 export default StartScreen;

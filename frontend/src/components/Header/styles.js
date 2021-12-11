@@ -1,7 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  modal:{
-    textAlign: 'center'
+  text:{
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
   }
 });

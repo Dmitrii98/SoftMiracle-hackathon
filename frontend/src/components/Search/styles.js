@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  modal:{
-    textAlign: 'center'
+  search:{
+    borderRadius: 30
   }
 });
