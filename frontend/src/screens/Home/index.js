@@ -1,23 +1,45 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import RecipeCard from '../../components/RecipeCard';
 import Layout from '../../components/Layout';
 import styles from './styles';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const data = [
-    {name: 'Название рецепта', key: 1},
-    {name: 'Название рецепта', key: 2},
-    {name: 'Название рецепта', key: 3},
-    {name: 'Название рецепта', key: 4},
+    {
+      name: 'Овсяная каша',
+      time: '40 мин',
+      key: 1
+    },
+    {
+      name: 'Пицца',
+      time: '60 мин',
+      key: 2
+    },
+    {
+      name: 'Бургер',
+      time: '15 мин',
+      key: 3
+    },
+    {
+      name: 'Макароны по-флотски',
+      time: '40 мин',
+      key: 4
+    },
   ];
 
   return (
     <Layout>
-      <ScrollView>
+      <ScrollView style={styles.scrollBox}>
+        <Text style={styles.title}>Популярные рецепты</Text>
         {
           data.map(card => (
-            <RecipeCard key={card.key} name={card.name} />
+            <RecipeCard
+              key={card.key}
+              name={card.name}
+              time={card.time}
+              navigation={navigation}
+            />
           ))
         }
       </ScrollView>
