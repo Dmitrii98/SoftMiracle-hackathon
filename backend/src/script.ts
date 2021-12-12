@@ -6,7 +6,6 @@ import cors from 'cors'
 
 import { router } from './routes/index';
 import sequelize from "./db";
-import { Orders } from './models/orders.model';
 import { Recipe } from './models/recipe.model';
 import { RecipesProducts } from './models/recipes-orders';
 
@@ -14,11 +13,8 @@ dotEnv.config();
 const app = express();
 
 app.use(express.json());
+app.use(express.static('files'));
 app.use('/api', router);
-app.use(cors({
-    credentials:true,
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000'
-}))
 
 async function bootstrap(){
     Recipe.belongsToMany(Products, {through: RecipesProducts});

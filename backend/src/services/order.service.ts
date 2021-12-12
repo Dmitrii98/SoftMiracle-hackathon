@@ -25,8 +25,8 @@ export default new class OrderSevice {
 
     async getTopProductsAsName(name: string) {
         return await Orders.findOne({where: {product_name: name},
-            attributes: ["product_name", "merchant_name", [sequelize.fn('COUNT', sequelize.col("product_name")), 'count']],
-            group: ["product_name", "merchant_name"],
+            attributes: ["product_name", "merchant_name", "product_cost", "weight", "picture", "vendor", [sequelize.fn('COUNT', sequelize.col("product_name")), 'count']],
+            group: ["product_name", "merchant_name", "product_cost", "weight", "picture", "vendor"],
             order: [["count", "DESC"]]
         }).catch(e => console.log(e));
     }
@@ -39,8 +39,8 @@ export default new class OrderSevice {
        return filtered;
     }
 
-    async getReceptsByCategoryes(category: number) {
-        let recept: any = await Recipe.findAll({include: Products, where: {category_id: category}});
+    async getRecepts() {
+        let recept: any = await Recipe.findAll({include: Products}).catch(e => console.log(e));
 
         const responses = Promise.all(recept.map(async (element: any, i: number) => {
             const products = await recept[i].products;
@@ -48,9 +48,37 @@ export default new class OrderSevice {
             recept[i].products = await this.getProducts(products);
 
             const response: IRecept = {
+                id: recept[i].id,
                 title: recept[i].title,
                 text: recept[i].text,
-                products: recept[i].products
+                time: recept[i].time,
+                picture: recept[i].picture,
+                products: recept[i].products,
+                subscription: recept[i].subscription,
+            }
+
+            return response;
+        }));
+
+        return responses;
+    }
+
+    async getReceptsByCategoryes(category: number) {
+        let recept: any = await Recipe.findAll({include: Products, where: {category_id: category}}).catch(e => console.log(e));
+
+        const responses = Promise.all(recept.map(async (element: any, i: number) => {
+            const products = await recept[i].products;
+
+            recept[i].products = await this.getProducts(products);
+
+            const response: IRecept = {
+                id: recept[i].id,
+                title: recept[i].title,
+                text: recept[i].text,
+                time: recept[i].time,
+                picture: recept[i].picture,
+                products: recept[i].products,
+                subscription: recept[i].subscription,
             }
 
             return response;

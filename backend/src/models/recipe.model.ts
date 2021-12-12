@@ -18,5 +18,11 @@ export const Recipe = sequelize.define('recipes',
     category_id: {
         type: DataTypes.INTEGER,
         allowNull:false
+    },
+    time: {
+        type: DataTypes.INTEGER
+    },
+    subscription: {
+        type: DataTypes.JSON
     }
 })

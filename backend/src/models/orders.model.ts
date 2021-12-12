@@ -28,8 +28,19 @@ export const Orders = sequelize.define('orders',
         type:DataTypes.STRING(100),
         allowNull:false
     },
+    weight: {
+        type: DataTypes.INTEGER,
+    },
     mcc:{
         type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    picture: {
+        type: DataTypes.TEXT,
+        allowNull:false
+    },
+    vendor: {
+        type: DataTypes.TEXT,
         allowNull:false
     }
 })

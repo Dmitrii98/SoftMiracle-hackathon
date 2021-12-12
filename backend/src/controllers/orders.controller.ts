@@ -20,6 +20,14 @@ export default new class OrderController {
         }
     }
 
+    async getRecepts(req: any, res: Response) {
+        try {
+            return res.status(httpStatus.OK).json(await orderService.getRecepts());
+        } catch(e) {
+            return res.status(httpStatus.NOT_FOUND).json({message: "Recept was not found"});
+        }
+    }
+
     async getCategoryes(req: any, res: Response) {
         return res.status(httpStatus.OK).json(await orderService.getCategoryes());
     }

@@ -1,5 +1,9 @@
-export default interface IRecept{
+export default interface IRecept {
+    id: number;
     title: string;
     text: string;
-    products: Array<any>
+    time: number;
+    picture: string;
+    subscription: object;
+    products: Array<any>;
 }
