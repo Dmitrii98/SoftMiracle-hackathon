@@ -1,10 +1,14 @@
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import styles from './styles';
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 
 const RecipeCard = ({navigation, recipe}) => {
-  console.log(recipe.picture);
 
   const openRecipe = () => {
     navigation.navigate('Recipe', {recipe: recipe});
@@ -25,7 +29,7 @@ const RecipeCard = ({navigation, recipe}) => {
             color='#fff'
             style={styles.timeIcon}
           />
-          <Text style={styles.timeText}>{recipe.time}</Text>
+          <Text style={styles.timeText}>{recipe.time} минут</Text>
         </View>
       </View>
     </TouchableOpacity>

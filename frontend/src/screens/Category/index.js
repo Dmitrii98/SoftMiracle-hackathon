@@ -3,8 +3,8 @@ import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import RecipeCard from '../../components/RecipeCard';
 import Layout from '../../components/Layout';
 import { goodsAPI } from '../../api/goodsAPI';
-import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 
 const Category = ({navigation, route}) => {
   const id = route.params.id;

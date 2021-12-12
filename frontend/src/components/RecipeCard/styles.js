@@ -15,7 +15,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     width: '100%',
-    backgroundColor: 'rgba(93, 90, 102, 0.8)',
+    backgroundColor: 'rgba(142, 103, 228, 0.72);',
     paddingVertical: 10,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5
@@ -36,7 +36,7 @@ export default StyleSheet.create({
     color: '#fff',
     marginTop: 1
   },
-  image:{
+  image: {
     width: '100%',
     height: '100%',
     borderRadius: 5,

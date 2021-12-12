@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Preloader from '../components/Preloader';
 import { HomeStack } from './stack';
+import Basket from '../screens/Basket';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ const MyTabs = () => {
       >
         <Tab.Screen name='Главная' component={HomeStack} options={{headerShown: false}} />
         <Tab.Screen name='Скидки на рецепты' component={Preloader} options={{headerShown: false}} />
-        <Tab.Screen name='Корзина' component={Preloader} options={{headerShown: false}} />
+        <Tab.Screen name='Корзина' component={Basket} options={{headerShown: false}} />
       </Tab.Navigator>
     </>
   );

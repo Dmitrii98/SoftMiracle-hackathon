@@ -5,9 +5,10 @@ export default StyleSheet.create({
     textAlign: 'center'
   },
   scrollBox: {
-    marginBottom: 80
+    marginBottom: 80,
+    backgroundColor: '#fff',
   },
-  title:{
+  title: {
     marginLeft: 20,
     fontSize: 16,
     fontWeight: 'bold',

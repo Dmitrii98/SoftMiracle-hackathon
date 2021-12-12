@@ -9,10 +9,14 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Button } from 'react-native-elements';
+import IngredientsCarousel from '../../components/IngredientsCarousel';
+import Step from '../../components/Step';
 import styles from './styles';
 
 const RecipeScreen = ({route, navigation}) => {
   const recipe = route.params.recipe;
+  const products = recipe.products;
+  const steps = recipe.text;
 
   const backHome = () => {
     navigation.navigate('Home');
@@ -44,12 +48,11 @@ const RecipeScreen = ({route, navigation}) => {
                 color='#A7A7A7'
                 style={styles.timeIcon}
               />
-              <Text style={styles.timeText}>{recipe.time}</Text>
+              <Text style={styles.timeText}>{recipe.time} минут</Text>
             </View>
           </View>
           <Text style={styles.text}>
-            Классическая овсяная каша легко превращается в сытный десерт: нужно просто добавить
-            свежей клубники
+            {recipe.subscription.text}
           </Text>
         </View>
         <View style={styles.titleAndButton}>
@@ -64,12 +67,13 @@ const RecipeScreen = ({route, navigation}) => {
             buttonStyle={{backgroundColor: '#F2994A'}}
           />
         </View>
+        <IngredientsCarousel navigation={navigation} products={products} />
 
-        {/*
+        <Text style={styles.titlePreparing}>Приготовление</Text>
 
-        ТОЛЯ ТВОЙ КОД БУДЕТ ТУТ
-
-      */}
+        {steps.map((step, index)=>(
+          <Step stepText={step} index={index}/>
+        ))}
 
       </ScrollView>
     </SafeAreaView>
