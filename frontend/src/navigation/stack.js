@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RecipeScreen from '../screens/Recipe';
 import Home from '../screens/Home';
 import Category from '../screens/Category';
+import ProductInfo from '../screens/ProductInfo';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,11 @@ export const HomeStack = () => {
       <Stack.Screen
         name='Category'
         component={Category}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name='ProductInfo'
+        component={ProductInfo}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

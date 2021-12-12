@@ -25,8 +25,8 @@ export default StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: 22,
-    marginBottom: 20,
-    marginHorizontal: 4
+    marginHorizontal: 4,
+    width: 230
   },
   text: {
     fontSize: 14,
@@ -35,9 +35,11 @@ export default StyleSheet.create({
     width: '80%'
   },
   titleAndTime: {
+    marginBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 15,
+    alignItems: 'center'
   },
   timeText: {
     color: '#A7A7A7',
@@ -45,7 +47,7 @@ export default StyleSheet.create({
   },
   backButton: {
     marginHorizontal: 15,
-    marginTop: 10,
+    marginTop: 18,
     padding: 10,
     backgroundColor: '#fff',
     borderRadius: 100,
@@ -63,6 +65,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20
+    marginBottom: 40
   },
+  titlePreparing: {
+    fontWeight: 'bold',
+    fontSize: 22,
+    marginHorizontal: 20,
+    marginBottom: 30
+  }
 });
