@@ -13,7 +13,7 @@ import styles from './styles';
 
 const RecipeScreen = ({route, navigation}) => {
   const recipe = route.params.recipe;
-  console.log(recipe);
+
   const backHome = () => {
     navigation.navigate('Home');
   };
@@ -22,13 +22,13 @@ const RecipeScreen = ({route, navigation}) => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.recipe}>
         <TouchableOpacity>
-            <Ionicons
-              onPress={backHome}
-              name='arrow-back'
-              size={30}
-              color='#000'
-              style={styles.backButton}
-            />
+          <Ionicons
+            onPress={backHome}
+            name='arrow-back'
+            size={30}
+            color='#000'
+            style={styles.backButton}
+          />
         </TouchableOpacity>
         <Image
           style={styles.productImage}
